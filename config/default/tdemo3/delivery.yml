@@ -31,12 +31,13 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
         kapp.k14s.io/identity: v1;default/carto.run/Workload/tdemo3;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"tdemo1","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1701405643107471422","kapp.k14s.io/association":"v1.b75469c3eacbcc5bec1a7c6b0e4cf46a"},"name":"tdemo3","namespace":"default"},"spec":{"env":[{"name":"message","value":"tanzu3"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tfynes-pivotal/tdemo1"}}}}'
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"tdemo1","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1701405643107471422","kapp.k14s.io/association":"v1.b75469c3eacbcc5bec1a7c6b0e4cf46a"},"name":"tdemo3","namespace":"default"},"spec":{"env":[{"name":"message","value":"tanzu3"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tfynes-pivotal/tdemo1"}}}}'
         kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tdemo1
         apps.tanzu.vmware.com/auto-configure-actuators: "false"
+        apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: tdemo3
         conventions.carto.run/framework: spring-boot
