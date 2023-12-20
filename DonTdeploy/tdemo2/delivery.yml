@@ -1,17 +1,17 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: tdemo2
+  name: tdemo6
   annotations:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
-    app.kubernetes.io/part-of: tdemo2
+    app.kubernetes.io/part-of: tdemo6
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
-    carto.run/workload-name: tdemo2
+    carto.run/workload-name: tdemo6
 spec:
   template:
     metadata:
@@ -30,30 +30,30 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
-        kapp.k14s.io/identity: v1;dev2/carto.run/Workload/tdemo2;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"tdemo2","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1701405643107471422","kapp.k14s.io/association":"v1.c500ea55f1f57f576ce86a9f1c58d086"},"name":"tdemo2","namespace":"dev2"},"spec":{"env":[{"name":"message","value":"tanzu2"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tfynes-pivotal/tdemo1"}}}}'
+        kapp.k14s.io/identity: v1;dev2/carto.run/Workload/tdemo6;carto.run/v1alpha1
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"tdemo6","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1701405643107471422","kapp.k14s.io/association":"v1.815341a6cffce7356da85875f82102ef"},"name":"tdemo6","namespace":"dev2"},"spec":{"env":[{"name":"message","value":"tanzu6"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tfynes-pivotal/tdemo1"}}}}'
         kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
-        app.kubernetes.io/part-of: tdemo2
+        app.kubernetes.io/part-of: tdemo6
         apps.tanzu.vmware.com/auto-configure-actuators: "false"
         apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
-        carto.run/workload-name: tdemo2
+        carto.run/workload-name: tdemo6
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.path: actuator
         tanzu.app.live.view.application.actuator.port: "8080"
         tanzu.app.live.view.application.flavours: spring-boot
-        tanzu.app.live.view.application.name: tdemo2
+        tanzu.app.live.view.application.name: tdemo6
     spec:
       containers:
       - env:
         - name: message
-          value: tanzu2
+          value: tanzu6
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.tap-demo.virtual-karma.com/tap/tdemo2-dev2@sha256:53ce6002eb4f0eaecc2272c3fbcd442586a0c282fe9b09ab4c0ce905f00e507d
+        image: harbor.tap-demo.virtual-karma.com/tap/tdemo6-dev2@sha256:53ce6002eb4f0eaecc2272c3fbcd442586a0c282fe9b09ab4c0ce905f00e507d
         livenessProbe:
           httpGet:
             path: /livez
